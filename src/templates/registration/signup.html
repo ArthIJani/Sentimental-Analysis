@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
+        <h1 class="text-3xl font-bold text-center mb-6 text-indigo-600">Create Your Account</h1>
+        <p class="text-center text-sm text-gray-500 mb-6">
+            Fill out the form below to get started
+        </p>
+        
+        <form method="post">
+            {% csrf_token %}
+            
+            <!-- Display form errors if there are any -->
+            <div class="mb-4">
+                {% if form.non_field_errors %}
+                    <div class="text-red-500 text-sm mb-4">
+                        {% for error in form.non_field_errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="space-y-4">
+                {% for field in form %}
+                    <div class="mb-4">
+                        <label for="{{ field.id_for_label }}" class="block text-sm font-semibold text-gray-700">{{ field.label }}</label>
+                        
+                        <!-- Field input with potential error styling -->
+                        <div>
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="text-red-500 text-sm mt-1">
+                                    {% for error in field.errors %}
+                                        <p>{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+                
+                <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition">
+                    Sign Up
+                </button>
+            </div>
+        </form>
+
+        <p class="mt-6 text-center text-sm text-gray-500">
+            Already have an account? 
+            <a href="{% url 'login' %}" class="text-indigo-600 hover:underline">Login</a>
+        </p>
+    </div>
+</section>
+{% endblock %}
