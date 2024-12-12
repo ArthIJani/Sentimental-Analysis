@@ -1,5 +1,3 @@
-Here is the README.md file in markdown format:
-
 # Sentiment Analysis Web App
 
 A simple and modern sentiment analysis web app built with **Django** and styled using **Tailwind CSS**. Users can sign up, log in, and analyze text for sentiment. The app features a frosted glass effect for a sleek, modern interface.
@@ -33,20 +31,20 @@ A simple and modern sentiment analysis web app built with **Django** and styled 
 git clone https://github.com/yourusername/sentiment-analysis-web-app.git
 cd sentiment-analysis-web-app
 ```
-2. Set Up a Virtual Environment (Optional but Recommended)
+### 2. Set Up a Virtual Environment (Optional but Recommended)
 
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 ```
-3. Install Dependencies
+### 3. Install Dependencies
 
 Install the required Python packages using pip:
 
 ```bash
 pip install -r requirements.txt
 ```
-4. Set Up the Database
+### 4. Set Up the Database
 
 Run Django migrations to set up the database:
 
@@ -54,7 +52,7 @@ Run Django migrations to set up the database:
 python manage.py migrate
 ```
 
-5. Create a Superuser (for Admin Access)
+### 5. Create a Superuser (for Admin Access)
 
 If you want to access the Django admin panel, create a superuser:
 
