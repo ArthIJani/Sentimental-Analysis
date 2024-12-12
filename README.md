@@ -49,6 +49,7 @@ pip install -r requirements.txt
 Run Django migrations to set up the database:
 
 ```bash
+python manage.py makemigrations
 python manage.py migrate
 ```
 
