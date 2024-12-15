@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mx-auto mt-10 p-6 bg-white shadow-md rounded-lg">
+<div class="container mx-auto mt-10 p-6 bg-black text-white shadow-md rounded-lg">
     <h1 class="text-3xl font-bold text-center mb-6">Sentiment Analysis App</h1>
 
     <form method="post" class="space-y-4">
@@ -9,7 +9,7 @@
         <div class="container py-10 px-10 mx-0 min-w-full flex flex-col items-center">
             {{ form.user_input.errors }}
             <textarea name="user_input" id="user_input" 
-                      class="w-full p-3 border border-gray-200 rounded-lg outline focus:outline-none outline-2 focus:ring focus:ring-indigo-600"
+                      class="w-full p-3 border bg-black text-white border-white rounded-lg outline focus:outline-none outline-1 focus:ring focus:ring-indigo-600"
                       rows="4" placeholder="Enter your text here...">{{ form.user_input.value }}</textarea>
         
         <br>
@@ -31,7 +31,7 @@
     <ul class="mt-4 space-y-3">
         {% for entry in history %}
         <li class="p-3 bg-gray-100 border border-gray-200 rounded-lg">
-            <span class="font-semibold">{{ entry.user_input }}</span>
+            <span class="text-black font-semibold">{{ entry.user_input }}</span>
             <span class="text-gray-600">- {{ entry.sentiment }}</span>
             <span class="text-sm text-gray-500">({{ entry.timestamp }})</span>
         </li>
