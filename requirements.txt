@@ -1,2 +1,7 @@
 Django
 textblob
+gunicorn
+transformers
+torch
+pandas
+scikit-learn
